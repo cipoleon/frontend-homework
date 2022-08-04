@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  background: rgba(231, 231, 231, 0.51);
+}
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+
+  .mat-card-title,
+  .mat-button {
+    font-family: "Manrope", sans-serif;
+  }
+}
