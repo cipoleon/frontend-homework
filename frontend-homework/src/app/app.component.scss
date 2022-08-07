@@ -12,6 +12,7 @@
   box-sizing: border-box;
   border-radius: 14px;
   padding: 0;
+  box-shadow: none;
 
   p {
     margin: 0;
@@ -33,6 +34,7 @@
   }
 
   .title {
+    color: #3f3f3f;
     margin-left: 5px;
     font-size: 14px;
   }

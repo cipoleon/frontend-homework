@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
-  styleUrls: ['./result.component.scss']
+  styleUrls: ['./result.component.scss'],
 })
 export class ResultComponent implements OnInit {
+  public size = '';
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
+    this.size = this.route.snapshot.url[0].path;
   }
 
+  goBack() {
+    this.router.navigate(['']);
+  }
 }

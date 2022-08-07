@@ -4,13 +4,46 @@ html,
 body {
   height: 100%;
   background: rgba(231, 231, 231, 0.51);
+  color: #3f3f3f;
 }
 body {
   margin: 0;
   font-family: "Manrope", sans-serif;
 
   .mat-card-title,
-  .mat-button {
+  .mat-raised-button,
+  .mat-select-placeholder {
     font-family: "Manrope", sans-serif;
+  }
+
+  p {
+    font-family: "Inter", sans-serif;
+  }
+}
+
+mat-label {
+  color: #00000040;
+}
+
+.mat-select-arrow {
+  border: none !important;
+}
+
+.my-size .mat-form-field-wrapper div.mat-form-field-underline {
+  display: none;
+}
+
+.mat-form-field-wrapper div.mat-form-field-underline {
+  background-color: #c0e9df !important;
+  height: 2px;
+}
+
+.spinner,
+.spinner svg {
+  width: 30px !important;
+  height: 30px !important;
+
+  circle {
+    stroke: #3f3f3f;
   }
 }

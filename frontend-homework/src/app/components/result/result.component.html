@@ -1,1 +1,7 @@
-<p>result works!</p>
+<div class="container">
+  <p class="text">Your size is</p>
+  <p class="size">{{ size | resultSize }}</p>
+  <button mat-raised-button class="button">
+    <p class="button-title" (click)="goBack()">OK</p>
+  </button>
+</div>

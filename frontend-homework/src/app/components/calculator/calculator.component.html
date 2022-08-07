@@ -1,1 +1,48 @@
-<button mat-raised-button>CALCULATE</button>
+<form #form="ngForm" class="form" (ngSubmit)="form.valid ? getResult() : null">
+  <mat-form-field class="select" floatLabel="never" hideRequiredMarker>
+    <mat-label class="label">Select a brand</mat-label>
+    <span matSuffix class="suffix"
+      ><img alt="dropdown" src="./../../../assets/dropdown.svg"
+    /></span>
+    <mat-select
+      [(ngModel)]="model.brand"
+      name="brand"
+      (selectionChange)="getCategories()"
+      required
+    >
+      <mat-option *ngFor="let brand of brands | async" [value]="brand.id">{{
+        brand.name
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="select" floatLabel="never">
+    <mat-label class="label">Select category</mat-label>
+    <span matSuffix class="suffix"
+      ><img alt="dropdown" src="./../../../assets/dropdown.svg"
+    /></span>
+    <mat-select [(ngModel)]="model.category" name="category">
+      <mat-option> - </mat-option>
+      <mat-option
+        *ngFor="let category of categories | async"
+        [value]="category.id"
+        >{{ category.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="my-size" appearance="legacy" hideRequiredMarker>
+    <p matPrefix class="prefix">My size is</p>
+    <p matSuffix class="suffix">inches.</p>
+    <input
+      matInput
+      maxlength="10"
+      [(ngModel)]="model.size"
+      name="size"
+      class="size-input"
+      required
+    />
+  </mat-form-field>
+  <button mat-raised-button class="button">
+    <p *ngIf="!loading" class="button-title">CALCULATE</p>
+    <mat-spinner *ngIf="loading" class="spinner"></mat-spinner>
+  </button>
+</form>
