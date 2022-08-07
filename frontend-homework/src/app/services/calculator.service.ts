@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import {
   BrandsResponse,
   CategoriesResponse,
+  SizeResponse,
 } from '../interfaces/common.interface';
 
 @Injectable({
@@ -40,8 +41,8 @@ export class CalculatorService {
     brand: string | null;
     category: string | null;
     size: string | null;
-  }) {
-    return this.http.get<CategoriesResponse>(
+  }): Observable<SizeResponse> {
+    return this.http.get<SizeResponse>(
       'https://size-calculator-api.sspinc.io/sizes?brand_id=' +
         data.brand +
         '&category_id=' +

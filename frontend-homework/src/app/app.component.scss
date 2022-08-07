@@ -3,43 +3,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.card {
-  width: 307px;
-  height: 229px;
-  border: 1px solid #00000040;
-  box-sizing: border-box;
-  border-radius: 14px;
-  padding: 0;
-  box-shadow: none;
+  .card {
+    width: 307px;
+    height: 229px;
+    border: 1px solid #00000040;
+    box-sizing: border-box;
+    border-radius: 14px;
+    padding: 0;
+    box-shadow: none;
 
-  p {
-    margin: 0;
-  }
+    p {
+      margin: 0;
+    }
 
-  .card-title {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    background-color: #dfeeeb;
-    border-radius: 14px 14px 0 0;
-    height: 40px;
-  }
+    .card-title {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      background-color: #dfeeeb;
+      border-radius: 14px 14px 0 0;
+      height: 40px;
 
-  .logo {
-    width: 17px;
-    height: 17px;
-    margin-left: 23px;
-  }
+      .logo {
+        width: 17px;
+        height: 17px;
+        margin-left: 23px;
+      }
 
-  .title {
-    color: #3f3f3f;
-    margin-left: 5px;
-    font-size: 14px;
-  }
+      .title {
+        color: #3f3f3f;
+        margin-left: 5px;
+        font-size: 14px;
+      }
+    }
 
-  .mat-divider {
-    border-color: #00000040;
+    .mat-divider {
+      border-color: #00000040;
+    }
   }
 }

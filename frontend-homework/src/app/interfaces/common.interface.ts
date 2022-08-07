@@ -17,3 +17,11 @@ export interface Category {
   id: string;
   name: string;
 }
+
+export interface SizeResponse {
+  sizes: Size[];
+}
+
+export interface Size {
+  label: string;
+}

@@ -11,11 +11,11 @@ export class ResultComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.size = this.route.snapshot.url[0].path;
   }
 
-  goBack() {
+  public goBack() {
     this.router.navigate(['']);
   }
 }

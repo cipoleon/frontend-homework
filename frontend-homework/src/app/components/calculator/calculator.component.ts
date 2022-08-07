@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { first, tap, Observable, map, of } from 'rxjs';
-import { Brand, Category } from 'src/app/interfaces/common.interface';
+import {
+  Brand,
+  Category,
+  SizeResponse,
+} from 'src/app/interfaces/common.interface';
 import { CalculatorService } from 'src/app/services/calculator.service';
 
 @Component({
@@ -9,15 +13,13 @@ import { CalculatorService } from 'src/app/services/calculator.service';
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.scss'],
 })
-export class CalculatorComponent implements OnInit {
+export class CalculatorComponent {
   public model = {
     brand: null,
     category: null,
     size: null,
   };
-
   public loading = false;
-
   public brands: Observable<Brand[]>;
   public categories: Observable<Category[]> = of([]);
 
@@ -30,15 +32,13 @@ export class CalculatorComponent implements OnInit {
       .pipe(map((res) => res.brands));
   }
 
-  ngOnInit(): void {}
-
   public getResult(): void {
     this.loading = true;
     this.calculatorService
       .getSizes(this.model)
       .pipe(
         first(),
-        tap((size: any) => {
+        tap((size: SizeResponse) => {
           this.loading = false;
           this.router.navigate([
             size.sizes.length
